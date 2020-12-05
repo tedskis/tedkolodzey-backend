@@ -1,13 +1,18 @@
-var url = require( 'url' );
-
+//modules
+var url       = require( 'url' );
+// inclueds
+var shared    = require( './shared' );
 
 
 
 module.exports = {
 	start : function() {
 		/** 
-		 * 
+		 * get all the information about the request, organize it, process it
+		 * keep track of the time it took to process
 		 */
+		// start timer
+		let start = shared.startTimer();
 		// parse uri
 
 		parseURI( 'start' );
@@ -18,6 +23,9 @@ module.exports = {
 
 		processRequest( 'start' );
 		// return data
+
+		let timer = shared.endTimer();
+		//shared.log( 'Timer'+ timer );
 	}
 };
 
@@ -31,10 +39,10 @@ function declarePost ( calledFrom ) {
 
 function processRequest ( calledFrom ) {
 	switch ( true ) {
-		case pageIsIndex() :     break;
-		case pageIsContact() :   break;
+		case pageIsIndex()     : break;
+		case pageIsContact()   : break;
 		case pageIsPortfolio() : break;
-		case pageIsScripts() :   break;
+		case pageIsScripts()   : break;
 	}
 
 }
