@@ -3,6 +3,8 @@ var url       = require( 'url' );
 // inclueds
 var shared    = require( './shared' );
 
+var uri;
+var post;
 
 
 module.exports = {
@@ -30,11 +32,12 @@ module.exports = {
 };
 
 function parseURI( calledFrom ) {
-	
+	this.uri = null;
 }
 
 function declarePost ( calledFrom ) {
-
+	
+	this.post = null;
 }
 
 function processRequest ( calledFrom ) {
